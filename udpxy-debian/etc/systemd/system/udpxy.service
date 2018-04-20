@@ -1,0 +1,11 @@
+[Unit]
+Description=UDP-to-HTTP multicast traffic relay daemon
+After=syslog.target network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/bin/udpxy -S -c10 -p4022
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
